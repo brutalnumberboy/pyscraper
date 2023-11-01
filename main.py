@@ -9,14 +9,6 @@ def copy_content(file):
         fp.write(soup.prettify())
 
 
-def search_links(file):
-    with open(file, 'r') as fp:
-        soup = BeautifulSoup(fp, 'html.parser')
-    with open('result.html', 'a') as fp:
-        for link in soup.find_all('a'):
-            fp.write(link.getText('href') + '\n')
-
-
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument("--html", dest="filename",
