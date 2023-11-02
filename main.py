@@ -4,22 +4,20 @@ from argparse import ArgumentParser
 
 http = httplib2.Http()
 status, response = http.request('https://news.ycombinator.com/') # take input url????
+soup = BeautifulSoup(response, 'html.parser')
 
 
 def copy_content():
-    soup = BeautifulSoup(response, 'html.parser')
     with open('result.html', 'a') as fp:
         fp.write(soup.prettify())
 
 
 def find_links():
-    soup = BeautifulSoup(response, 'html.parser')
     with open('result.txt', 'a') as fp:
         for link in soup.find_all('a', href=True):
             fp.write(link['href'] + '\n')
 
 def find_img():
-    soup = BeautifulSoup(response, 'html.parser')
     with open('images.txt', 'a') as fp:
         for img in soup.find_all('img'):
             fp.write(img['src'] + '\n')
