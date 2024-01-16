@@ -38,7 +38,7 @@ parser_links.add_argument('-l', type=str, dest="url", help="Specify the link")
 parser_links.add_argument('-o', type=str, dest="output_file", help="Name of the output file")
 parser_links.set_defaults(func=find_links)
 
-parser_images = subparser.add_parser('images', help="Extracts links from the documents and writes them into result.txt")
+parser_images = subparser.add_parser('images', help="Extracts images from the documents and writes them into result.txt")
 parser_images.add_argument('-l', type=str, dest="url", help="Specify the link")
 parser_images.add_argument('-o', type=str, dest="output_file", help="Name of the output file")
 parser_images.set_defaults(func=find_img)
