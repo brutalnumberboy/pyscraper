@@ -33,7 +33,7 @@ parser_html.add_argument('-l', type=str, dest="url", help="Specify the link")
 parser_html.add_argument('-o', type=str, dest="output_file", help="Name of the output file")
 parser_html.set_defaults(func=copy_content)
 
-parser_links = subparser.add_parser('links', help="Extracts links from the documents and writes them into result.txt")
+parser_links = subparser.add_parser('links', help="Extracts images from the documents and writes them into result.txt")
 parser_links.add_argument('-l', type=str, dest="url", help="Specify the link")
 parser_links.add_argument('-o', type=str, dest="output_file", help="Name of the output file")
 parser_links.set_defaults(func=find_links)
